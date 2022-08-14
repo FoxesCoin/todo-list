@@ -2,9 +2,12 @@ import React from 'react';
 import { createRoot } from 'react-dom/client';
 import { Provider } from 'react-redux';
 
-import { App } from 'pages/app';
+import { App } from 'app/app';
 
 import { store } from 'services/store';
+import { GlobalStyles } from 'styles/global';
+
+import 'styles/reset.css';
 
 const rootElement = document.getElementById('root');
 
@@ -17,6 +20,7 @@ const root = createRoot(rootElement);
 root.render(
   <React.StrictMode>
     <Provider store={store}>
+      <GlobalStyles />
       <App />
     </Provider>
   </React.StrictMode>
