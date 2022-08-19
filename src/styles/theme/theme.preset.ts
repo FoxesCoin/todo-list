@@ -29,11 +29,6 @@ export const cssFlexCenter = css`
   align-items: center;
 `;
 
-export const cssFullSize = css`
-  min-height: 100%;
-  width: 100%;
-`;
-
 export const cssInput = css`
   height: 3rem;
   border-radius: 0.5rem;

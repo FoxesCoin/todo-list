@@ -1,5 +1,4 @@
 import { ReactComponent as CheckMark } from 'assets/icons/check-mark.svg';
-import AutosizeInput from 'react-input-autosize';
 import styled, { keyframes } from 'styled-components';
 
 import { COLORS } from 'styles/color';
@@ -20,7 +19,9 @@ const fadeOut = keyframes`
 `;
 
 export const TodoItemStyled = {
-  Wrapper: styled(Theme.FlexLine)`
+  Wrapper: styled.div`
+    display: flex;
+    align-items: center;
     ${cssInput}
     background-color: ${COLORS.onyxOpacity};
     border-left: 10px solid ${COLORS.lightRed};
@@ -34,17 +35,26 @@ export const TodoItemStyled = {
       animation: ${fadeOut} 0.6s;
     }
   `,
+  TextWrapper: styled(Theme.GapRow)`
+    width: 100%;
+  `,
   Icon: styled(CheckMark)`
-    width: 32px;
-    height: 32px;
+    width: 24px;
+    height: 24px;
     transition: opacity 0.5s, width 0.3s 0.2s, height 0.3s 0.2s,
       padding 0.3s 0.2s;
-    padding: 8px;
-    border-radius: 50%;
 
-    &:hover {
-      background-color: ${COLORS.onyx};
-      fill: ${COLORS.lightGreen};
+    border: 2px solid ${COLORS.white};
+    border-radius: 8px;
+    padding: 4px;
+
+    path {
+      transition: all 0.2s;
+      opacity: 0;
+    }
+
+    &:hover path {
+      opacity: 1;
     }
 
     .todo_complete & {
@@ -54,7 +64,7 @@ export const TodoItemStyled = {
       padding: 0;
     }
   `,
-  TextWrapper: styled.div`
+  Text: styled.span`
     position: relative;
     ${animation}
 
@@ -76,16 +86,17 @@ export const TodoItemStyled = {
       }
     }
   `,
-  Text: styled(AutosizeInput)`
-    input {
-      background-color: transparent;
-    }
+  EditInput: styled.input`
+    width: 100%;
+    background-color: transparent;
     color: ${COLORS.white};
+    border-bottom: 1px solid ${COLORS.white};
   `,
   ImageWrapper: styled(Theme.FlexCenter)`
     padding: 0.5rem;
     border-radius: 0.25rem;
     transition: 0.2s all;
+    flex: 0 0 auto;
 
     &:hover {
       background-color: ${COLORS.onyx};

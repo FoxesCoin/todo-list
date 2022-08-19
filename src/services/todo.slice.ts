@@ -33,8 +33,10 @@ export const todoSlice = createSlice({
     removeItem: (state, action: PayloadAction<number>) => {
       state.items = state.items.filter((item) => item.id !== action.payload);
     },
+    removeAllCompleted: (state) => {
+      state.items = state.items.filter((item) => !item.isComplete);
+    },
     editItem: (state, { payload }: PayloadAction<TodoEdit>) => {
-      console.log({ payload });
       const index = state.items.findIndex((item) => item.id === payload.id);
       state.items[index].text = payload.text;
     },

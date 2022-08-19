@@ -56,19 +56,16 @@ export const TodoItem: RElement<Props> = (props) => {
         isDelete ? 'todo_delete' : ''
       }`.trim()}
     >
-      <Theme.GapRow>
+      <Styled.TextWrapper>
         <Theme.FlexCenter onClick={completeTodo}>
           <Styled.Icon />
         </Theme.FlexCenter>
-        <Styled.TextWrapper>
-          <Styled.Text
-            autoFocus
-            disabled={!isEdit}
-            value={newText}
-            onChange={handleChange}
-          />
-        </Styled.TextWrapper>
-      </Theme.GapRow>
+        {isEdit ? (
+          <Styled.EditInput autoFocus value={newText} onChange={handleChange} />
+        ) : (
+          <Styled.Text>{newText}</Styled.Text>
+        )}
+      </Styled.TextWrapper>
       <Theme.GapRow gap={16}>
         {!isComplete && (
           <Styled.ImageWrapper onClick={handleClickEdit}>

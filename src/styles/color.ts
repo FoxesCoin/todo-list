@@ -20,6 +20,9 @@ export const COLORS = <const>{
   darkRed: '#850a0a',
 
   lightGreen: '#1fd655',
+  darkGreen: '#86b049',
+
+  darkBlue: '#525b88',
 };
 
 export type Color = keyof typeof COLORS;

@@ -28,6 +28,7 @@ const Wrapper = styled.button`
 
   &:disabled {
     background-color: ${COLORS.dimGray};
+    cursor: not-allowed;
   }
 `;
 
