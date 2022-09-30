@@ -2,10 +2,7 @@
 
 This project was created to test new features in Redux Toolkit and React 18. 
 
-### Demo
-
-* [GitHub Pages](https://foxescoin.github.io/todo-list/)
-* [Heroku](https://foxescoin-todo-list.herokuapp.com/)
+### [Demo](https://foxescoin.github.io/todo-list/)
 
 ### Using:
 
